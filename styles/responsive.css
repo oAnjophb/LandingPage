@@ -1,0 +1,131 @@
+@media (max-width: 900px) {
+  header {
+    padding: 25px 4%;
+  }
+
+  .navlist a {
+    margin: 0 18px;
+    font-size: 1rem;
+  }
+
+  .logo img {
+    width: 44px;
+    height: 44px;
+  }
+}
+
+/* Mobile: Menu hamburguer e empilhamento */
+@media (max-width: 400px) {
+  header {
+    position: relative;
+    flex-wrap: wrap;
+    padding: 12px 16px;
+  }
+  #menu-icon {
+    display: block;
+    position: absolute;
+    margin-left: 40vh;
+    margin-top: 35px;
+    transform: translateY(-50%);
+    font-size: 38px;
+  }
+
+  .logo img {
+    width: 80px;
+    height: 60px;
+  }
+  .navlist {
+    display: flex;
+    position: absolute;
+    top: 25%;
+    background-color: #181717;
+    border-radius: 10px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 25px 0 15px 0;
+    transition: all 0.4s;
+    box-shadow: 0 2px 30px rgba(243, 243, 243, 0.07);
+    opacity: 0;
+    transform: scaleX(0.7);
+    pointer-events: none;
+    margin-left: 120px;
+    transition: opacity 0.4s, transform 0.4s;
+    z-index: 999;
+  }
+
+  .navlist.active {
+    opacity: 1;
+    transform: scaleX(1);
+    pointer-events: auto;
+  }
+
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 130vw;
+    height: 200vh;
+    z-index: 998;
+    background: rgba(0, 0, 0, 0.18);
+    backdrop-filter: blur(8px);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+  }
+  .overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .navlist li {
+    width: 100%;
+    margin: 0;
+  }
+  .navlist a {
+    margin: 12px 24px;
+    width: 100%;
+    padding: 12px 0;
+    font-size: 1.05rem;
+  }
+
+  .icons a i {
+    font-size: 22px;
+  }
+
+  .right-content {
+    display: none;
+  }
+
+  .hero-text {
+    max-width: 200vw;
+    margin-top: 120px;
+    margin-left: 85px;
+  }
+  section.hero {
+    padding: 0 2vw;
+  }
+  section.skills {
+    width: 90%;
+  }
+  .skills-text {
+    font-size: 80px;
+  }
+  section.projetos {
+    width: 90%;
+  }
+  .projetos-title {
+    font-size: 80px;
+  }
+}
+
+/* Extra Small Devices */
+@media (max-width: 430px) {
+  .nav-btn {
+    padding: 7px 14px;
+    font-size: 0.98rem;
+  }
+  header {
+    padding: 12px 2%;
+  }
+}

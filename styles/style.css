@@ -1,0 +1,558 @@
+/* 
+  =============================
+  RESET / VARIÁVEIS
+  =============================
+*/
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  font-family: "Roboto", sans-serif;
+}
+
+:root {
+  --bg-color: #0c0c0c; /* Fundo principal */
+  --text-color: #fff; /* Texto padrão */
+  --main-color: #faea5d88; /* Amarelo translúcido (destaque) */
+
+  --big-font: 6.6rem;
+  --p-font: 1rem;
+}
+
+/* 
+  =============================
+  BODY E HTML
+  =============================
+*/
+html,
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  background: url(../components/img/bg.png) no-repeat center center fixed;
+  scroll-behavior: smooth;
+
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 
+  =============================
+  HEADER (CABEÇALHO)
+  =============================
+*/
+header {
+  position: relative;
+  width: 100%;
+  top: 0;
+  right: 0;
+  padding: 35px 7%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: all 0.5s ease;
+  z-index: 1000;
+}
+
+.logo img {
+  width: 50px;
+  height: 50px;
+}
+
+.navlist {
+  display: flex;
+}
+
+.navlist a {
+  display: inline-block;
+  margin: 0 35px;
+  color: var(--text-color);
+  font-size: var(--p-font);
+  transition: all 0.6s ease;
+}
+
+.navlist a:hover {
+  transform: scale(1.2);
+  color: var(--main-color);
+}
+
+.right-content {
+  display: flex;
+  align-items: center;
+}
+
+.nav-btn {
+  display: inline-block;
+  padding: 9px 24px;
+  background: transparent;
+  border: 2px solid var(--text-color);
+  border-radius: 7px;
+  color: var(--text-color);
+  font-size: var(--p-font);
+  font-weight: 500;
+  transition: all 0.6s ease;
+}
+
+.nav-btn:hover {
+  transform: translateY(-5px);
+  border: 2px solid var(--main-color);
+  color: var(--main-color);
+}
+
+#menu-icon {
+  font-size: 42px;
+  z-index: 10001;
+  cursor: pointer;
+  margin-left: 25px;
+  display: none;
+}
+
+/* 
+  =============================
+  HERO SECTION
+  =============================
+*/
+
+.hero-container {
+  position: relative;
+  display: flex;
+  min-height: 95vh;
+  width: 100%;
+}
+
+section.hero {
+  display: flex;
+  align-items: center;
+  min-height: 95vh;
+  padding: 0 8vw;
+  position: relative;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.hero-text {
+  max-width: 50%;
+  z-index: 2;
+  text-align: left;
+  margin-left: 150px;
+  margin-bottom: 210px;
+}
+
+.hero-text h1 {
+  margin: 0;
+  font-weight: normal;
+  line-height: 1.1;
+  font-family: "Andale Mono", monospace;
+}
+
+.apresentacao {
+  font-size: 1.3rem;
+  color: var(--text-color);
+  letter-spacing: 2px;
+}
+
+.nome {
+  display: block;
+  font-size: var(--big-font);
+  font-weight: 400;
+  margin: 10px 0 0 0;
+}
+
+.ruan {
+  color: var(--main-color);
+  font-weight: 900;
+}
+
+.anjos {
+  color: var(--text-color);
+  font-weight: 900;
+}
+
+.destaque {
+  display: block;
+  font-size: 2.7rem;
+  margin: 12px 0 0 0;
+  font-weight: bold;
+}
+
+.estudante {
+  color: var(--text-color);
+}
+
+.computacao {
+  color: var(--main-color);
+}
+
+.hero-text-uespi {
+  display: block;
+  font-size: 1.3rem;
+  color: var(--text-color);
+  font-weight: normal;
+  margin-top: 8px;
+  opacity: 0.88;
+  letter-spacing: 1px;
+}
+
+section {
+  padding: 14%;
+}
+
+/* 
+  =============================
+  SOCIAL ICONS LATERAIS
+  =============================
+*/
+.icons {
+  position: absolute;
+  top: 50%;
+  left: 32px;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 28px;
+  z-index: 9999; /* bem alto! */
+  pointer-events: auto;
+}
+.icons a i {
+  font-size: 32px;
+  color: var(--text-color, #fff);
+  transition: color 0.2s, transform 0.2s;
+}
+.icons a:hover i {
+  color: var(--main-color, #faea5d);
+  transform: translateY(-5px) scale(1.15);
+}
+/* 
+  =============================
+  SKILLS
+  =============================
+*/
+section.skills {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 4px solid var(--main-color);
+  border-radius: 30px;
+  width: fit-content;
+  padding: 10px 30px;
+  box-sizing: border-box;
+  margin: 0 auto;
+  position: relative;
+  animation: border-flash 2s linear infinite;
+}
+
+@keyframes border-flash {
+  0% {
+    border-color: var(--main-color);
+  }
+  25% {
+    border-color: #2e2b1786;
+  }
+  50% {
+    border-color: var(--main-color);
+  }
+  75% {
+    border-color: #2e2b1786;
+  }
+  100% {
+    border-color: var(--main-color);
+  }
+}
+
+.skills-text {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.hard-skills {
+  font-size: 100px;
+  font-family: "Andale Mono", monospace;
+  font-weight: 900;
+  letter-spacing: 2px;
+}
+
+.hard {
+  color: var(--main-color);
+}
+
+.skills-word {
+  color: var(--text-color);
+}
+
+.skills-icons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 28px;
+  justify-content: center;
+  align-items: center;
+}
+
+.skills-icons a img {
+  padding: 30px;
+  transition: transform 0.2s;
+}
+
+.skills-icons a img:hover {
+  transform: scale(1.12);
+}
+
+/* 
+  =============================
+  PROJETOS
+  =============================
+*/
+section.projetos {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 4px solid var(--main-color);
+  border-radius: 30px;
+  width: 1410px;
+  max-width: 95vw;
+  padding: 20px 30px;
+  box-sizing: border-box;
+  margin: 10rem auto 0 auto;
+  position: relative;
+}
+
+.projetos-text {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* Título igual ao do skills */
+.projetos-title {
+  font-size: 100px;
+  font-family: "Andale Mono", monospace;
+  font-weight: 900;
+  margin-bottom: 60px;
+  display: inline-block;
+  letter-spacing: 2px;
+}
+
+.project-highlight {
+  /* era .hard */
+  color: var(--main-color);
+}
+.project-normal {
+  /* era .skills-word */
+  color: var(--text-color);
+}
+
+/* Cards em linha, igual os ícones do skills */
+.projetos-infos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 28px;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+/* Cards compactos */
+.aquasense,
+.neolife,
+.graf {
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(15, 15, 15, 0.418);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 420px;
+  min-width: 270px;
+  transition: transform 0.2s;
+}
+
+.aquasense:hover,
+.neolife:hover,
+.graf:hover {
+  transform: scale(1.02);
+}
+
+.aquasense img,
+.neolife img,
+.graf img {
+  width: 120px;
+  height: auto;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.aquasense p,
+.neolife p,
+.graf p {
+  font-size: 0.98rem;
+  color: var(--text-color);
+  margin: 0;
+  text-align: center;
+  line-height: 1.4;
+}
+
+/* 
+  =============================
+  FOOTER (RODAPÉ)
+  =============================
+*/
+.footer {
+  background: linear-gradient(135deg, #171717 0%, #0c0c0c 100%);
+  color: #fff;
+  padding: 50px 0 10px 0;
+  margin-top: 80px;
+  border-radius: 24px 24px 0 0;
+  width: 100%;
+}
+
+.footer-top {
+  text-align: center;
+  padding-bottom: 32px;
+  border-bottom: 1px solid #222;
+}
+
+.footer-top h2 {
+  font-size: 2rem;
+  margin-bottom: 12px;
+  font-family: "Sora", "Roboto", sans-serif;
+  font-weight: 700;
+  color: #fff;
+}
+
+.footer-top p {
+  font-size: 1rem;
+  color: #aaa;
+  margin-bottom: 18px;
+}
+
+.footer-btn {
+  background: #afa34f; /* Amarelo dourado */
+  color: #171717; /* Preto escuro */
+  padding: 10px 32px;
+  border-radius: 8px;
+  border: none;
+  font-size: 1rem;
+  font-weight: 700;
+  transition: background 0.2s, color 0.2s;
+  text-decoration: none;
+  box-shadow: 0 2px 12px #0002;
+}
+
+.footer-btn:hover {
+  background: #fff;
+  color: #afa34f;
+  border: 1px solid #afa34f;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 38px 0 15px 0;
+  flex-wrap: wrap;
+}
+
+.footer-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.footer-logo {
+  font-size: 2rem;
+  font-family: "Sora", "Roboto", sans-serif;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 2px;
+}
+
+.footer-logo b {
+  color: #afa34f;
+}
+
+.footer-desc {
+  font-size: 1rem;
+  color: #afa34f;
+  margin-top: 10px;
+}
+
+.footer-col h3 {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  font-family: "Sora", "Roboto", sans-serif;
+  color: #afa34f;
+}
+
+.footer-col ul {
+  padding: 0;
+  margin: 0;
+}
+
+.footer-col ul li {
+  margin-bottom: 7px;
+}
+
+.footer-col ul li a {
+  color: #aaa;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer-col ul li a:hover {
+  color: #afa34f;
+}
+
+.footer-social {
+  margin-top: 15px;
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+.footer-social a {
+  color: #afa34f;
+  font-size: 1.5rem;
+  transition: color 0.2s, transform 0.2s;
+}
+
+.footer-social a:hover {
+  color: #fff;
+  transform: translateY(-3px) scale(1.15);
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px solid #222;
+  padding: 18px 8vw 0 8vw;
+  font-size: 0.98rem;
+  color: #aaa;
+  margin-top: 30px;
+  flex-wrap: wrap;
+}
+
+.logofooter img {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+}
+
+.footer-policy {
+  color: #afa34f;
+  text-decoration: none;
+  margin-left: 18px;
+  transition: color 0.2s;
+}
+
+.footer-policy:hover {
+  color: #fff;
+}
