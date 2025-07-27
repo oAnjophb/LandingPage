@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portifólio | RUAN ANJOS</title>
+    <title>Portifólio | Ruan Anjos</title>
 
     <link rel="stylesheet" type="text/css" href="/styles/style.css" />
     <link rel="stylesheet" href="/styles/responsive.css" />
@@ -59,6 +59,7 @@
         <ul class="navlist">
           <li><a href="#habilidades">Habilidades</a></li>
           <li><a href="#projetos">Projetos</a></li>
+          <li><a href="/components/pdf/cv_Ruan_Anjos.rtf" download="cv_Ruan_Anjos.rtf">Baixar Curriculum Vitae</a></li>
         </ul>
 
         <div class="right-content">
@@ -94,40 +95,22 @@
       <!-- Skills -->
       <section class="skills" id="habilidades">
         <div class="skills-text">
-          <h1>
-            <span class="hard-skills">
-              <span class="hard">Hard</span> <span class="skills">Skills</span>
-            </span>
+          <h1 class="skills-main-title">
+            <span class="skills-minhas">MINHAS</span>
+            <span class="skills-skills">SKILLS</span>
           </h1>
-        </div>
-        <div class="skills-icons">
-          <a href="#skills"
-            ><img src="/components/img/skills/python.png" alt="python"
-          /></a>
-          <a href="#skills"
-            ><img src="/components/img/skills/typescript.png" alt="typescript"
-          /></a>
-          <a href="#skills"
-            ><img src="/components/img/skills/js.png" alt="javascript"
-          /></a>
-          <a href="#skills"
-            ><img src="/components/img/skills/html-5.png" alt="html5"
-          /></a>
-          <a href="#skills"
-            ><img src="/components/img/skills/css-3.png" alt="css3"
-          /></a>
-          <a href="#skills"
-            ><img src="/components/img/skills/vuejs.png" alt="vuejs"
-          /></a>
-          <a href="#skills"
-            ><img src="/components/img/skills/sass.png" alt="scss"
-          /></a>
-          <a href="#skills"
-            ><img src="/components/img/skills/node-js.png" alt="nodejs"
-          /></a>
-          <a href="#skills"
-            ><img src="/components/img/skills/react.png" alt="react"
-          /></a>
+          <div class="skills-categories">
+            <a href="/PAGES/Hard-Skills.html">
+              <div class="hard-skills clickable">
+                <h2 class="hard-title">Hard Skills</h2>
+              </div>
+            </a>
+            <a href="/PAGES/Soft-Skills.html"
+              ><div class="soft-skills clickable">
+                <h2 class="soft-title">Soft Skills</h2>
+              </div>
+            </a>
+          </div>
         </div>
       </section>
 
@@ -232,6 +215,7 @@
         <span>© 2025 Ruan Anjos</span>
       </div>
     </footer>
-    <script src="/script.js"></script>
+    <script src="/scripts/mobileScripts.js"></script>
+    <script src="/scripts/popup.js"></script>
   </body>
 </html>
